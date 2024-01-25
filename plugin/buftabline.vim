@@ -77,7 +77,7 @@ function! buftabline#render()
         let tab_num = 0
 	for bufnum in bufnums
                 let tab_num = tab_num + 1
-		let screen_num = bufnum . ' ' tab_num " show_num ? bufnum : show_ord ? screen_num + 1 : ''
+		let screen_num = 'b' . bufnum . ' ' tab_num " show_num ? bufnum : show_ord ? screen_num + 1 : ''
 		let tab = { 'num': bufnum, 'pre': '' }
 		let tab.hilite = currentbuf == bufnum ? 'Current' : bufwinnr(bufnum) > 0 ? 'Active' : 'Hidden'
 		if currentbuf == bufnum | let [centerbuf, s:centerbuf] = [bufnum, bufnum] | endif
